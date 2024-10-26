@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, Alert, TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, Button } from 'react-native';
 
 export default function App() {
   console.log("App Executed")
@@ -11,7 +11,8 @@ export default function App() {
       <Button 
       color="orange"
       title="Click Me" 
-      onPress={() => console.log("Button pressed")}/>
+      onPress={() => Alert.prompt("my title", "my message", text => console.log(text))}
+        />
       <Text numberOfLines={1} onPress={handlePress}>
         React Native Tutorial
       </Text>
@@ -37,3 +38,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+// Alert.alert("My title", "My message", [{text: "Yes", onPress: () => console.log("button pressed - Yes")}, {text: "No", onPress: () => console.log("button pressed - No")}] )}/>
